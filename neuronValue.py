@@ -12,6 +12,12 @@ class Value:
         self._op = _op
         self.label = label
 
+    def __eq__(self, other):
+        #This equal is going to be ill defined until I decide how "neurons" should be properly defined
+        #I will define it initally for just the data for testing and it should be improved upon 
+        return self.data == other.data
+    def __hash__(self):
+        return id(self.data)
         
     #repr is the toString override
     def __repr__(self):
